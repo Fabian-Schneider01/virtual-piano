@@ -1,4 +1,4 @@
-# CESP Programming Project Title
+# Virtual Piano
 
 A RARS Tool extension for playing a virtual piano
 
