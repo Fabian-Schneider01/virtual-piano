@@ -1,11 +1,10 @@
 # CESP Programming Project Title
 
-Simple overview of use/purpose.
-
+A RARS Tool extension for playing a virtual piano
 
 ## Authors
 
-Contributors names and contact info
+Fabian Schneider
 
 ## Demo Video
 
