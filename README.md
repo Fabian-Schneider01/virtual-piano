@@ -1,6 +1,6 @@
 # Virtual Piano
 
-A RARS Tool extension for playing a virtual piano
+A RARS Tool extension for playing a virtual piano with Mini-Game Mode
 
 ## Authors
 
@@ -22,7 +22,10 @@ An in-depth paragraph about your project and overview of use.
 
 Specify which file need to be used to run your program:
 e.g.
-run my_cool_program.asm in RARS
+music mode:
+run begin.asm in RARS
+play mode:
+run game.asm in RARS
 
 ## Files
 Describe the content of each file of your application: e.g.
