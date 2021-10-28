@@ -20,19 +20,20 @@ An in-depth paragraph about your project and overview of use.
 
 ### How to run
 
-music mode: run begin.asm in RARS #
-play mode: run game.asm in RARS #
+music mode: run begin.asm in RARS                            
+
+game mode: run game.asm in RARS                     
 
 ## Files
 Describe the content of each file of your application: e.g.
 
-src/main.c   # Main file of program
+src/VirtualPiano.Java   # Main file of program
 
-src/main.asm # compiled version of main.c for RV32IM
+src/begin.asm # compiled version of main.c for RV32IM
 
-src/featureA.asm # A specific feature called in main
+src/game.asm # A specific feature called in main
 
-test/test1.asm - test9.asm # 9 unit tests for featureA
+test/saved.asm - test9.asm # 9 unit tests for featureA
 
 
 ## Test
