@@ -22,10 +22,8 @@ An in-depth paragraph about your project and overview of use.
 
 Specify which file need to be used to run your program:
 e.g.
-music mode:
-run begin.asm in RARS
-play mode:
-run game.asm in RARS
+music mode: run begin.asm in RARS
+play mode: run game.asm in RARS
 
 ## Files
 Describe the content of each file of your application: e.g.
