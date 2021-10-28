@@ -20,8 +20,6 @@ An in-depth paragraph about your project and overview of use.
 
 ### How to run
 
-Specify which file need to be used to run your program:
-e.g.
 music mode: run begin.asm in RARS
 play mode: run game.asm in RARS
 
