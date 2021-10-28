@@ -20,8 +20,8 @@ An in-depth paragraph about your project and overview of use.
 
 ### How to run
 
-music mode: run begin.asm in RARS \n
-play mode: run game.asm in RARS \n
+music mode: run begin.asm in RARS #
+play mode: run game.asm in RARS #
 
 ## Files
 Describe the content of each file of your application: e.g.
