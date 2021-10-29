@@ -199,21 +199,17 @@ public class VirtualPiano extends AbstractToolAndApplication {
      */
     private void pitchEvent(int pitch) {
         RegisterFile.updateRegister("a0", pitch);
-        try
-        {
+        try {
             if(RegisterFile.getValue("a2") != -1) {
                 //Sleep prevents the clear coming too soon (Otherwise pitch wouldn't be played at all)
                 Thread.sleep(100);
                 //Needs to be reset to not play the same pitch multiple times
                 RegisterFile.updateRegister("a0", 0);
             }
-            if(record)
-            {
+            if(record) {
                 recorded.add(pitch);
             }
-        }
-        catch(InterruptedException ex)
-        {
+        } catch(InterruptedException ex) {
             Thread.currentThread().interrupt();
         }
     }
@@ -232,7 +228,7 @@ public class VirtualPiano extends AbstractToolAndApplication {
                 else
                     pitchList[i] = pitchList[i] - 0x000000C;
 
-        }
+        } 
         else if (shiftDirection == RIGHTSHIFT) {
             for (int i = 0; i < pitchList.length; i++)
                 //When arrived at maximum octave then jump to default octave
