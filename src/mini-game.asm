@@ -259,7 +259,7 @@ draw.hit:
 	lw a5, 16(sp)
 	lw t0, 20(sp)
 	lw a7, 24(sp)
-	addi sp, sp, 24
+	addi sp, sp, 28
 	
 	ret
 
@@ -310,7 +310,7 @@ draw.miss:
 	lw a5, 16(sp)
 	lw t0, 20(sp)
 	lw a7, 24(sp)
-	addi sp, sp, 24
+	addi sp, sp, 28
 	
 	ret
 
