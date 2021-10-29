@@ -230,12 +230,12 @@ draw.hit:
 	lw t0, init
 	addi t0, t0, 56 
 	
-	draw_loop_hit:
+	draw.hit.loop:
 		
 		sw t2, (t0)
 		addi t4, t4, 1
 		addi t0, t0, 64
-		bne t3, t4, draw_loop_hit
+		bne t3, t4, draw.hit.loop
 		
 	li a7, 32
 	li a0, 250
@@ -245,12 +245,12 @@ draw.hit:
 	lw t0, init
 	addi t0, t0, 56
 	
-	delete_loop_hit:
+	delete.hit.loop:
 		li t2, 0 
 		sw t2, (t0)
 		addi t4, t4, 1
 		addi t0, t0, 64
-		bne t3, t4, delete_loop_hit
+		bne t3, t4, delete.hit.loop
 	
 	lw a0, (sp)
 	lw t2, 4(sp)
