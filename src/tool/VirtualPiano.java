@@ -303,11 +303,13 @@ public class VirtualPiano extends AbstractToolAndApplication {
 
     /**
      * Overrides the method without any functionality of the AbstractToolAndApplication class.
-     * Will be called when the reset button is pressed and clears complete data segment
+     * Will be called when the reset button is pressed and clears complete data segment and recorded list
+     * Also resets the save window content
      */
     @Override
     protected void reset() {
         resetDataSegment();
+        recorded.clear();
         super.reset();
     }
 
