@@ -151,9 +151,9 @@ public class VirtualPiano extends AbstractToolAndApplication {
 
     private static final int[] instrumentValues = {
             0x00000000, //Piano
-            10, //Chromatic Percussion
-            18, //Organ
-            24, //Guitar
+            0x0000000a, //Chromatic Percussion
+            0x00000012, //Organ
+            0x00000018, //Guitar
             0x00000020, //Bass
             0x00000028, //Strings
             0x00000030, //Ensemble
@@ -169,7 +169,6 @@ public class VirtualPiano extends AbstractToolAndApplication {
     };
 
     private boolean record = false;
-    private boolean playMode = false;
 
     //Storing pitches when recorded for saving method
     java.util.List<Integer> recorded = new ArrayList<Integer>();
@@ -187,6 +186,7 @@ public class VirtualPiano extends AbstractToolAndApplication {
         for(int i = 0; i < instrumentValues.length; i++) {
             if(instrumentValues[i] == currentInstrument) {
                 return i;
+
             }
         }
         return -1;
@@ -228,7 +228,7 @@ public class VirtualPiano extends AbstractToolAndApplication {
                 else
                     pitchList[i] = pitchList[i] - 0x000000C;
 
-        } 
+        }
         else if (shiftDirection == RIGHTSHIFT) {
             for (int i = 0; i < pitchList.length; i++)
                 //When arrived at maximum octave then jump to default octave
@@ -336,8 +336,7 @@ public class VirtualPiano extends AbstractToolAndApplication {
      * Builds the top section which includes multiple setting possibilities.
      * @return selectionArea
      */
-    private JComponent buildSelectionArea()
-    {
+    private JComponent buildSelectionArea() {
 
         selectionArea = new JPanel();
         //Buttons for selecting mode
@@ -365,8 +364,7 @@ public class VirtualPiano extends AbstractToolAndApplication {
                         if(connectButton.isConnected() && !record) {
                             recordButton.setText("stop");
                             record = true;
-                        }
-                        else
+                        } else
                             interruptRecording();
                     }
                 });
@@ -470,7 +468,8 @@ public class VirtualPiano extends AbstractToolAndApplication {
         instrumentSelection.addActionListener(
                 new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
-                        RegisterFile.updateRegister("a2", instrumentSelection.getSelectedIndex());
+                        int newInstrument = instrumentValues[instrumentSelection.getSelectedIndex()];
+                        RegisterFile.updateRegister("a2", newInstrument);
                     }
                 });
 
@@ -501,8 +500,7 @@ public class VirtualPiano extends AbstractToolAndApplication {
      * up or down.
      * @return keyArea
      */
-    private JComponent buildKeyArea()
-    {
+    private JComponent buildKeyArea() {
 
         JPanel keyArea = new JPanel();
 
@@ -809,15 +807,14 @@ public class VirtualPiano extends AbstractToolAndApplication {
      * for making the mini-game easier. The progressbar shows how much memory is left in data segment
      * @return bottomSection
      */
-    private JComponent buildBottomArea()
-    {
+    private JComponent buildBottomArea() {
+
         bottomSection = new JPanel();
 
         gameButton = new JButton("game");
         gameButton.addActionListener(
                 new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
-                        playMode = true;
                         changeKeyColor();
                     }
                 });
@@ -918,5 +915,8 @@ public class VirtualPiano extends AbstractToolAndApplication {
     }
 
 }
+
+
+
 
 
