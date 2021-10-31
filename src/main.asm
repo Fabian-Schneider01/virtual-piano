@@ -1,11 +1,11 @@
-#########################
+#----------------------------------------
 #SETUP FOR THE MINI-GAME (memory game)
 #Open the bitmap bisplay and the virtual piano in the tool section
 #Press the game button in the virtual piano tool
 #Select 32 for "unit width in pixels" and "unit height in pixels"
 #Select 512 for "display width in pixels" and 256 for "display height in pixels"
 #Select 0x10040000(heap) for "base address for display
-########################
+#----------------------------------------
 #GAME INFORMATION (Rules of the memory game)
 #1)Run the program
 #2)Select a difficulty in the console (easy = 1 / medium = 2 / difficult = 3)
@@ -14,7 +14,7 @@
 #5)After all colored pieces dropped down, you have to press the piano keys in the same sequence as the colored pieces dropped down
 #6)If a green bar appears on the right, you pressed the correct key. A red bar appears if you pressed the wrong key
 #7)After all correct keys have been pressed, your score will appear on in the console
-##########################
+#----------------------------------------
 #USE OF REGISTERS THROUGHOUT THE PROGRAM
 #a0: reserved for ecall
 #a1: reserved for ecall
@@ -31,7 +31,8 @@
 #t4: loads each color value in color array
 #t5: loads each pitch value in song array
 #t6: used for jal
-#########################
+#----------------------------------------
+
 .data
 show.score.player_1: .string "score of player:  "
 show.max_score.easy: .string " / 100"
