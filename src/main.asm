@@ -1,3 +1,10 @@
+.data
+show.score.player_1: .string "score of player:  "
+show.max_score.easy: .string " / 100"
+show.max_score.medium: .string " / 200"
+show.max_score.difficult: .string " / 300"
+
+.text
 #----------------------------------------
 #SETUP FOR THE MINI-GAME (memory game)
 #Open the bitmap bisplay and the virtual piano in the tool section
@@ -33,13 +40,6 @@
 #t6: used for jal
 #----------------------------------------
 
-.data
-show.score.player_1: .string "score of player:  "
-show.max_score.easy: .string " / 100"
-show.max_score.medium: .string " / 200"
-show.max_score.difficult: .string " / 300"
-
-.text
 main:
 	#will be stored in a4
 	jal set.difficulty
