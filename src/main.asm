@@ -32,6 +32,7 @@
 #t5: loads each pitch value in song array
 #t6: used for jal
 #########################
+
 .data
 show.score.player_1: .string "score of player:  "
 show.max_score.easy: .string " / 100"
