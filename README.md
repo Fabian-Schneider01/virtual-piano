@@ -27,11 +27,11 @@ game mode: run src/game.asm in RARS
 ## Files
 Describe the content of each file of your application: e.g.
 
-src/VirtualPiano.Java   # Main file of program
+src/tool/VirtualPiano.Java   # Main file of program
 
-src/begin.asm # compiled version of main.c for RV32IM
+src/tool/start.asm # compiled version of main.c for RV32IM
 
-src/game.asm # A specific feature called in main
+src/main.asm # A specific feature called in main
 
 test/saved.asm - test9.asm # 9 unit tests for featureA
 
