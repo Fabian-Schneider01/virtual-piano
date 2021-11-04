@@ -139,6 +139,3 @@ exit_countdown:
 	addi sp, sp, 24
 	
 	jalr t6, 4
-
-		
-	
