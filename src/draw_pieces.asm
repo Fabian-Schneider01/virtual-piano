@@ -286,9 +286,10 @@ move_piece_down:
 play_init:
 	li a7, 33
 	li a0, 0	
-	li a1, 400	
+	li a1, 350	
 	li a2, 0	
 	li a3, 80
+	
 	li t2, 0
 	li t1, 1
 	beq t1, a4, play_easy
@@ -328,7 +329,6 @@ key_pressed:
 key_correct:
 	ecall
 	jal draw_hit
-	
 	li a0, 0
 	addi a5, a5, 4
 	addi a6, a6, 10		#add 10 points
