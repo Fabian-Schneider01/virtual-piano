@@ -4,7 +4,8 @@ A RARS tool extension for playing a virtual piano with mini-game mode
 
 ## Authors
 
-Fabian Schneider (inf20182@lehre.dhbw-stuttgart.de)
+Fabian Schneider 
+contact: inf20182@lehre.dhbw-stuttgart.de
 
 ## Presentation Video
 
