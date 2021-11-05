@@ -13,11 +13,15 @@ Fabian Schneider
 Replace -h3eH4ubuno in the this .md by your YT video
 
 ## Description
-###Introduction
+
+### Introduction
+
 The project "Virtual Piano" was developed to offer RARS users the oppertunity to play a virtual piano as a tool included in RARS. 
 In addition to the normal mode for making music, the virtual piano offers extra functionalities, which are listed below:
 
 ### Virtual Piano
+# GUI of Virtual Piano
+![basic_virtual_piano](https://user-images.githubusercontent.com/81293687/140512151-ba5aa52b-e2ef-447d-b806-8cf9025b8b2f.jpg)
 
 1) adjust: volume, duration and select one from multiple instruments
 2) record: after the record button is pressed, everything you played will be stored 
