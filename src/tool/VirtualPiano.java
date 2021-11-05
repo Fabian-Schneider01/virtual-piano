@@ -411,12 +411,12 @@ public class VirtualPiano extends AbstractToolAndApplication {
                                 "li t1, " + ((recorded.size() * 4) - 4) +
                                 "\n" +
                                 "\nmain:\n" +
-                                "bge t1, t0, playMelody\n" +
-                                "j exit #if t1 = t0 exit\n" +
-                                "\nplayMelody:\n" +
-                                "lw a0, 0(a4) #load word from array\n" +
-                                "addi t0, t0, 4 #i++\n" +
-                                "addi a4, a4, 4 #array go one position forward\n" +
+                                "bge t1, t0, play_melody\n" +
+                                "j exit" +
+                                "\nplay_melody:\n" +
+                                "lw a0, 0(a4)\n" +
+                                "addi t0, t0, 4\n" +
+                                "addi a4, a4, 4\n" +
                                 "ecall \n" +
                                 "j main\n" +
                                 "\n" +
