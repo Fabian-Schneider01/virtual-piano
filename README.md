@@ -36,10 +36,10 @@ An in-depth paragraph about your project and overview of use.
 
 ### How to play
 
-There is no ideal way to play a piano. Try out different configurations in the GUI and play around with different instruments. 
+**There is no ideal way to play a piano. Try out different configurations in the GUI and play around with different instruments.**
 
 ### How to run
-open src/tool/start.asm in RARS and execute                          
+open `src/tool/start.asm` in RARS and execute                          
  
 ## Mini-Game Mode
 ![Mini-Game Umsetzung](https://user-images.githubusercontent.com/81293687/140580003-85e34c3e-61ae-4353-af74-1e2c7a1d816e.jpg)
@@ -47,7 +47,7 @@ open src/tool/start.asm in RARS and execute
 ## Setup
 ![setup_game](https://user-images.githubusercontent.com/81293687/140581464-cf2ed43b-c73f-4db8-b862-1c5fcdf5ad28.jpg)
 
-* open the bitmap bisplay and the virtual piano in the tool section
+* open the bitmap display and the virtual piano in the tool section
 * press the game button in the virtual piano tool
 * select 32 for "unit width in pixels" and "unit height in pixels"
 * select 512 for "display width in pixels" and 256 for "display height in pixels"
@@ -67,53 +67,53 @@ open src/tool/start.asm in RARS and execute
 
 ## How to run
 
-open src/main.asm in RARS and execute
+open `src/main.asm` in RARS and execute
 
 ## Files
 Description of all files (rars extension, mini-game, unit tests)
 ### RARS extension files
 
-* src/tool/VirtualPiano.Java # File for creating the virtual piano and let it appear in the tool section of RARS
+* `src/tool/VirtualPiano.Java` # File for creating the virtual piano and let it appear in the tool section of RARS
 
-* src/tool/start.asm # The correct assembly code for playing the virtual piano
+* `src/tool/start.asm` # The correct assembly code for playing the virtual piano
 
-* src/tool/rars.jar # Application, JDK 17!!!
+* `src/tool/rars.jar` # Application, JDK 17!!!
 
-* src/tool/rars.zip # Contains all files and classes of the newest RARS version
+* `src/tool/rars.zip` # Contains all files and classes of the newest RARS version
 
 ### Mini-Game files
 
-* src/main.asm # Main class of mini-game (launches the game)
+* `src/main.asm` # Main class of mini-game (launches the game)
 
-* src/song_difficulties # Sets the game difficulty (melody difficulty and movement speed of pixels)
+* `src/song_difficulties` # Sets the game difficulty (melody difficulty and movement speed of pixels)
 
-* src/draw_countdown.asm # Draws a five second countdown before memorizig phase begins
+* `src/draw_countdown.asm` # Draws a five second countdown before memorizig phase begins
 
-* src/draw_pieces.asm # moves the pixels down and listens in second phase for the pressed keys by the user
+* `src/draw_pieces.asm` # moves the pixels down and listens in second phase for the pressed keys by the user
 
 ### Unit Test files
 
-* test/utest_countdown.asm # tests if the countdown appears at the correct position
+* `test/utest_countdown.asm` # tests if the countdown appears at the correct position
 
-* test/utest_difficulties.asm # tests if difficulty value is stored in correct register, after user set a difficulty
+* `test/utest_difficulties.asm` # tests if difficulty value is stored in correct register, after user set a difficulty
 
-* test/utest_highscore.asm # tests if the correct highscore strings are printed (depending on difficulty)
+* `test/utest_highscore.asm` # tests if the correct highscore strings are printed (depending on difficulty)
 
-* test/utest_max_min_config.asm # tests the maximum and minimum values of the Virtual Piano tool (for e.g value of slider when completely left)
+* `test/utest_max_min_config.asm` # tests the maximum and minimum values of the Virtual Piano tool (for e.g value of slider when completely left)
 
-* test/utest_position.asm # tests if green sidebar, red sidebar and colored topbar appears at correct position
+* `test/utest_position.asm` # tests if green sidebar, red sidebar and colored topbar appears at correct position
 
-* test/utest_tool.asm # tests if piano keys return the correct value and tests a random configuration of duration, volume and instrument
+* `test/utest_tool.asm` # tests if piano keys return the correct value and tests a random configuration of duration, volume and instrument
 
 ### Tested files (relevant for testing the saving function of the Virtual Piano)
 
-* test/utest_saved.asm
+* `test/utest_saved.asm`
 
-* test/utest_max_config.asm
+* `test/utest_max_config.asm`
 
-* test/utest_min_config.asm
+* `test/utest_min_config.asm`
 
-## Test
+## Tests
 Successful Unit Tests
 ![utest_screenshot_1](https://user-images.githubusercontent.com/81293687/140469724-cee143c6-4dda-4fcd-83f2-bab549457e64.jpg)
 ![utest_screenshot_2](https://user-images.githubusercontent.com/81293687/140469817-8f004696-bf07-45da-bb74-fc0ff71fcbd9.jpg)
