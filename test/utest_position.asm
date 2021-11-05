@@ -11,14 +11,14 @@ test_draw_top:
 #then the sidebars work as they should 
 test_hit:
 	jal draw_sidebar
-	jal draw.hit
+	jal draw_hit
 	lw t0, init
 	addi t0, t0, 60 
 	beqz t0, utest_failed
 	
 test_miss:
 	jal draw_sidebar
-	jal draw.miss
+	jal draw_miss
 	lw t0, init
 	addi t0, t0, 60
 	beqz t0, utest_failed
@@ -41,15 +41,16 @@ draw_sidebar:
 	ret
 	
 utest_failed:
-	li a0, -1
+	li a1, -1
 	j utest_exit
 	
-#if a0 = 1 the unittest will print a success
+#returns 1 in a1 for success
 utest_success:
-	li a0, 1
+	li a1, 1
 	j utest_exit
 
-.include "draw_pieces.asm"
+.include "../src/draw_pieces.asm"
 
 utest_exit:
-	addi zero, zero, 0
+	li a7, 10
+	ecall

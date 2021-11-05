@@ -1,5 +1,5 @@
 #generated code with minimal position of volume slider, duration slider and first element of instrument menu
-#deleted melody -> not relevant for this test
+#deleted melody -> not relevant for this test -> this is not the test itself! will be called by utest_max_min_config.asm
 .text
 utest_min:
 initialize_min:

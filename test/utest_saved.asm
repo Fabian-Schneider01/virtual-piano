@@ -1,6 +1,7 @@
 #automatically generated code by pressing save button
 #values will be compared in utest_tool to check wether buttons create the correct pitch
 #checked if values of duration, volume and instrument are in range
+#!this is not the test itself! will be called by utest_tool.asm!
 .data
 melody:
 .word 60 62 64 65 67 69 71 70 68 66 63 61 
