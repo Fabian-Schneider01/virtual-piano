@@ -18,22 +18,21 @@ contact: inf20182@lehre.dhbw-stuttgart.de
 
 ### Introduction
 
-The project "Virtual Piano" was developed to offer RARS users the oppertunity to play a virtual piano as a tool included in RARS.  
-In addition to the normal mode for making music, the virtual piano offers multiple functionalities, which are listed below. Besides playing the piano normally there is also an integrated mini-game mode which trains your brain by making you memorize a melody sequence. There are multiple difficulties from which you can choose. How the game works and additional information are written further down.
+The project "Virtual Piano" was developed to offer RARS users the oppertunity to play a virtual piano as a tool included in RARS. You'll be able to change values of the MidiOutSync Sycall in runtime leading to different sounds everytime you change something in the GUI. 
+In addition to the normal mode for making music, the virtual piano offers multiple functionalities, which are listed in the `Virtual Piano` section. Besides playing the piano normally there is also an integrated mini-game mode which trains your brain by making you memorize a melody sequence (symbolized through colors). There are multiple difficulties  which you can choose from. How the game works and additional information are written in the `Mini-Game Mode` section.
 
 ## Virtual Piano
-GUI of the Virtual Piano:
+GUI of the Virtual Piano
 
 ![basic_virtual_piano](https://user-images.githubusercontent.com/81293687/140512151-ba5aa52b-e2ef-447d-b806-8cf9025b8b2f.jpg)
 
 #### Description of the functionalities:
-* adjust: volume, duration and select one from multiple instruments
-* record: after the record button is pressed, everything you played will be stored 
-* reset: the reset button will delete the recording you've made before
-* save: after finishing a recording session, the save button copies an automatically generated assembly code to your clipboard, which you can include in a new .asm file. In runtime the recorded melody will be played with the adjusted volume, duration and instrument
-* play: the play button lets you hear the melody you've played in an recording session
-* game: the game button colors your piano key buttons to a specific color, as a preparation for the mini-game
-An in-depth paragraph about your project and overview of use.
+* `adjust:` volume, duration and select one from multiple instruments
+* `record:` after the record button is pressed, everything you played will be stored in the .data-segment
+* `reset:` the reset button will delete the recording you've made before
+* `save:` after finishing a recording session, the save button copies an automatically generated assembly code to your clipboard, which you can include in a new .asm file. In runtime the recorded melody will be played with the adjusted volume, duration and instrument
+* `play:` the play button lets you hear the melody you've played in an recording session
+* `game:` the game button colors your piano key buttons to a specific color, as a preparation for the mini-game
 
 ### How to play
 
@@ -50,14 +49,14 @@ open `src/tool/start.asm` in RARS and execute
 
 * open the bitmap display and the virtual piano in the tool section
 * press the game button in the virtual piano tool
-* select 32 for "unit width in pixels" and "unit height in pixels"
-* select 512 for "display width in pixels" and 256 for "display height in pixels"
-* select 0x10040000(heap) for "base address for display
+* select 32 for `nit width in pixels` and `nit height in pixels`
+* select 512 for `display width in pixels` and 256 for `display height in pixels`
+* select `0x10040000(heap)` as the base address for the display
 
 ## How to play
 
 * Run the program
-* Select a difficulty by typing to the console (easy = 1 / medium = 2 / difficult = 3)
+* Select a difficulty by typing to the console `(easy = 1 / medium = 2 / difficult = 3)`
 * Get ready in countdown phase
 * You have to memorize the pattern of color pieces dropping down
 * After all colored pieces dropped down, next step is to press the piano keys in the same sequence as the colored pieces dropped down
@@ -78,9 +77,9 @@ Description of all files (rars extension, mini-game, unit tests)
 
 * `src/tool/start.asm` # The correct assembly code for playing the virtual piano
 
-* `src/tool/rars.jar` # Application, JDK 17!!!
+* `src/tool/rars.jar` # Application, `JDK 17!!`
 
-* `src/tool/rars.zip` # Contains all files and classes of the newest RARS version
+* `src/tool/rars.zip` # Contains all files and classes of the newest RARS version (including the Virtual Piano)
 
 ### Mini-Game files
 
@@ -90,7 +89,7 @@ Description of all files (rars extension, mini-game, unit tests)
 
 * `src/draw_countdown.asm` # Draws a five second countdown before memorizig phase begins
 
-* `src/draw_pieces.asm` # moves the pixels down and listens in second phase for the pressed keys by the user
+* `src/draw_pieces.asm` # moves the pixels down and listens in second phase for a pressed keys by the user
 
 ### Unit Test files
 
@@ -108,11 +107,11 @@ Description of all files (rars extension, mini-game, unit tests)
 
 ### Tested files (relevant for testing the saving function of the Virtual Piano)
 
-* `test/utest_saved.asm`
+* `test/utest_saved.asm` # contains a melody which will be compared with `test/utest_tool.asm`
 
-* `test/utest_max_config.asm`
+* `test/utest_max_config.asm` # contains the maximum configuration values of the GUI and will be compared with `test/max_min_config.asm`
 
-* `test/utest_min_config.asm`
+* `test/utest_min_config.asm` # contains the minimum configuration values of the GUI and will be compared with `test/max_min_config.asm`
 
 ## Tests
 Successful Unit Tests
