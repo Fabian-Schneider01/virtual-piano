@@ -18,11 +18,13 @@ An in-depth paragraph about your project and overview of use.
 
 
 
-### How to run
+### Virtual Piano
 
 music mode: run src/tool/start.asm in RARS                            
 
-game mode: run src/game.asm in RARS                     
+game mode: run src/game.asm in RARS    
+
+### Mini-Game Mode
 
 ## Files
 Describe the content of each file of your application: e.g.
