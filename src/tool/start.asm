@@ -1,16 +1,24 @@
+#if a piano key in the virtual piano is pressed, then the MidiOutSync Sycall is called
+#you will hear a sound with the pitch you chose by pressing one of the piano keys
 .text
 initialize:
-li a7, 33	#MidiOutSync Sycall (Load the service number in register a7)
-li a1, 500	#Duration (Optional)
-li a2, 18	#Instrument (Optional)
-li a3, 80	#Volume (Optional)
+	#MidiOutSync Sycall (Load the service number in register a7)
+	li a7, 33
+	#duration (optional/can be set in runtime with Virtual Piano tool)
+	li a1, 500	
+	#instrument (optional/can be set in runtime with Virtual Piano tool)
+	li a2, 0	
+	#volume (optional/can be set in runtime with Virtual Piano tool)
+	li a3, 80	
 
 main:
-bnez a0, playSound	#If a Keybutton from the tool has been pressed, Issue the ecall instruction 
-j main
+	#if a key is pressed, the ecall gets called
+	bnez a0, play_sound
+	#no key was pressed, jump back to main and listen	
+	j main
 
-playSound:	#Plays the Sound
-ecall
-j main
-
-
+play_sound:	
+	#sound is generated
+	ecall
+	#listen for the next key being pressed
+	j main
