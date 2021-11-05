@@ -20,24 +20,27 @@ The project "Virtual Piano" was developed to offer RARS users the oppertunity to
 In addition to the normal mode for making music, the virtual piano offers extra functionalities, which are listed below:
 
 ### Virtual Piano
-# GUI of Virtual Piano
+GUI of the Virtual Piano:
+
 ![basic_virtual_piano](https://user-images.githubusercontent.com/81293687/140512151-ba5aa52b-e2ef-447d-b806-8cf9025b8b2f.jpg)
 
+Extra functionalities:
 1) adjust: volume, duration and select one from multiple instruments
 2) record: after the record button is pressed, everything you played will be stored 
-3) play: the play button lets you hear the melody you've played in an recording session
-4) save: after finishing a recording session, the save button copies an automatically generated assembly code to your clipboard, which you can include in a new .asm file. In runtime the recorded melody will be played with the adjusted volume, duration and instrument
-5) game: the game button colors your piano key buttons to a specific color, as a preparation for the mini-game
+3) reset: the reset button will delete the recording you've made before
+4) play: the play button lets you hear the melody you've played in an recording session
+5) save: after finishing a recording session, the save button copies an automatically generated assembly code to your clipboard, which you can include in a new .asm file. In runtime the recorded melody will be played with the adjusted volume, duration and instrument
+6) game: the game button colors your piano key buttons to a specific color, as a preparation for the mini-game
 An in-depth paragraph about your project and overview of use.
 
-##How to run
+### How to run
 music mode: run src/tool/start.asm in RARS                            
 
 game mode: run src/game.asm in RARS    
 
 ### Mini-Game Mode
 
-##How to run
+## How to run
 ## Files
 Describe the content of each file of your application: e.g.
 
