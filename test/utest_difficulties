@@ -49,8 +49,8 @@ utest_success:
 	li a0, 1
 	ret
 	
-.include "song_difficulties.asm"
-.include "draw_pieces.asm"
+.include "../src/song_difficulties.asm"
+.include "../src/draw_pieces.asm"
 
 utest_exit:
 	addi zero, zero, 0
