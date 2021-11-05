@@ -95,7 +95,7 @@ utest_failed:
 	li a1, -1
 	j exit_utest
 		
-.include "draw_countdown.asm"
+.include "../src/draw_countdown.asm"
 	
 exit_utest:
 	li a7, 10
