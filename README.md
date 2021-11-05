@@ -49,7 +49,7 @@ open `src/tool/start.asm` in RARS and execute
 
 * open the bitmap display and the virtual piano in the tool section
 * press the game button in the virtual piano tool
-* select 32 for `nit width in pixels` and `nit height in pixels`
+* select 32 for `unit width in pixels` and `unit height in pixels`
 * select 512 for `display width in pixels` and 256 for `display height in pixels`
 * select `0x10040000(heap)` as the base address for the display
 
