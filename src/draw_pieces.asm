@@ -1,3 +1,6 @@
+#first phase: color pieces dropping down (remember the sequence)
+#second phase: reprocedure the correct sequence by pressing the piano keys in the right order 
+
 .data
 #heap base address
 init:		

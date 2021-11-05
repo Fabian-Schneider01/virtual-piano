@@ -32,6 +32,8 @@
 #t4: loads each color value in color array
 #t5: loads each pitch value in song array
 #t6: used for jal
+#s2: compare value for returning to utest
+#s3: compare vlaue for returning to utest
 #########################
 #strings which are printed to console to show the achieved score
 .data
@@ -100,7 +102,12 @@ difficult_highscore:
 .include "draw_countdown.asm"
 .include "draw_pieces.asm"
 
+#needed for accessing utest_highscore.asm
+exit_utest:
+	ret
 #exit game
 program_exit:
+	li s2, 1
+	beq s2, s3, exit_utest
 	addi zero, zero, 0
 	

@@ -1,4 +1,5 @@
-#strings for asking for difficulty
+#asking the user for prefered game difficulty
+
 .data
 ask_difficulty: .string "difficulty (easy = 1 / medium = 2 / difficult = 3): "
 ask_difficulty_wrong: .string "input wrong - type either 1, 2 or 3"

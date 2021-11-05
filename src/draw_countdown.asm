@@ -1,3 +1,5 @@
+#a 5 second countdown will be printed to prepare the user for the game 
+
 .data
 initialize:		
 .word 0x10040000 #heap base address
@@ -11,13 +13,18 @@ sw t1, 12(sp)
 sw t2, 16(sp)
 sw t3, 20(sp)
 
+#numbers will be drawn in white
 countdown_setup:
+	#max value of loop -> first draw white, afterwards delete by drawing same number in black
 	li t3, 2 	
+	#load white color
 	li t4, 0xFFFFFF
+	#sleep sycall -> 1 sec between each number
 	li a7, 32
 	li a0, 500
 	j draw_five
 	
+#draws three pixels to the right
 draw_right:
 	sw t4, (t0)
 	addi t0, t0, 4
@@ -26,6 +33,7 @@ draw_right:
 	sw t4, (t0)
 	ret
 	
+#draws three pixels to the left
 draw_left:
 	sw t4, (t0)
 	addi t0, t0, -4
@@ -34,6 +42,7 @@ draw_left:
 	sw t4, (t0)
 	ret
 	
+#draws three pixels down
 draw_down:
 	sw t4, (t0)
 	addi t0, t0, 64
@@ -42,6 +51,7 @@ draw_down:
 	sw t4, (t0)
 	ret
 	
+#draws three pixels up
 draw_up:
 	sw t4, (t0)
 	addi t0, t0, -64
@@ -51,21 +61,27 @@ draw_up:
 	ret
 	
 draw_five:
-	lw t0, initialize	#heap base address
-	addi t0, t0, 160	#starting position
+	#heap base address
+	lw t0, initialize
+	#starting position to begin drawing the number	
+	addi t0, t0, 160
+	#path to draw number	
 	jal draw_left
 	jal draw_down
 	jal draw_right
 	jal draw_down
 	jal draw_left
 	ecall
-	li t4, 0x000000		#for deleting the number
+	#load black to delete the number
+	li t4, 0x000000		
 	addi t2, t2, 1		
 	bne t2, t3, draw_five
+	#load white and prepare for drawing the next number
 	li t4, 0xFFFFFF
 	li t2, 0
 	j draw_four
 	
+#same procedure as drawing number 5
 draw_four:
 	lw t0, initialize
 	addi t0, t0, 152
@@ -82,6 +98,7 @@ draw_four:
 	li t2, 0
 	j draw_three
 	
+#same procedure as drawing number 4
 draw_three:
 	lw t0, initialize
 	addi t0, t0, 152
@@ -99,6 +116,7 @@ draw_three:
 	li t2, 0
 	j draw_two
 	
+#same procedure as drawing number 5
 draw_two:
 	lw t0, initialize
 	addi t0, t0, 152
@@ -115,6 +133,7 @@ draw_two:
 	li t2, 0
 	j draw_one
 	
+#same procedure as drawing number 5
 draw_one:
 	lw t0, initialize
 	addi t0, t0, 160
@@ -127,8 +146,12 @@ draw_one:
 	li t4, 0xFFFFFF
 	li t2, 0
 	j exit_countdown
-		
 	
+#necessary for returning to utest	
+utest_return:
+	jalr s4, 4
+	
+#exit countdown and jump back to main for starting the actual game or returning to utest
 exit_countdown:
 	lw a0, (sp)
 	lw a7, 4(sp)
@@ -137,5 +160,8 @@ exit_countdown:
 	lw t2, 16(sp)
 	lw t3, 20(sp)
 	addi sp, sp, 24
-	
+	#if a utest is active
+	li s2, 1
+	beq s2, s3, utest_return
+	#exit to main
 	jalr t6, 4
