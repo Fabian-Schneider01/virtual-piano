@@ -7,10 +7,6 @@ A RARS tool extension for playing a virtual piano with mini-game mode
 Fabian Schneider 
 contact: inf20182@lehre.dhbw-stuttgart.de
 
-## Presentation Video
-
-[![IMAGE ALT TEXT](http://img.youtube.com/vi/eukcTmpCptg/0.jpg)](https://www.youtube.com/watch?v=eukcTmpCptg "Virtual Piano")
-
 ## Presentation
 [Virtual Piano.pptx](https://github.com/Fabian-Schneider01/Virtual-Piano/files/7489061/Virtual.Piano.pptx)
 
